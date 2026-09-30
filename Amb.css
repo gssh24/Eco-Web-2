@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e8f5e9;
+    margin: 0;
+    padding: 0;
+    color: #2e7d32;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #1b5e20;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    margin: 10px 0;
+}
+
+main {
+    width: min(1100px, 94%);
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+button {
+    background-color: #43a047;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #2e7d32;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:focus-visible {
+    outline: 3px solid #81c784;
+    outline-offset: 2px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ================= SECCIONES ================= */
+
+#infoSection,
+#mapSection,
+#quizSection,
+#creditsSection {
+    background-color: white;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ================= CLASIFICACIONES ================= */
+
+.clasificacion {
+    margin: 15px 0;
+}
+
+.classificationButton {
+    width: 100%;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px 20px;
+    background-color: #43a047;
+    border-radius: 12px;
+}
+
+.classificationButton:hover {
+    background-color: #2e7d32;
+}
+
+.classificationContent {
+    padding: 20px;
+    margin-top: 5px;
+    background-color: #f1f8e9;
+    border-radius: 0 0 12px 12px;
+    line-height: 1.6;
+}
+
+.classificationContent h3 {
+    color: #1b5e20;
+}
+
+.classificationContent ul {
+    line-height: 1.8;
+}
+
+
+/* ================= IMÁGENES ================= */
+
+/*
+   Todas las imágenes principales tienen aproximadamente
+   150 px de ancho y alto.
+*/
+
+.classificationContent > img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 15px auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ================= ESPECIES ================= */
+
+.speciesGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.speciesCard {
+    width: 180px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+}
+
+.speciesCard img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.speciesCard h4 {
+    margin: 8px 0 3px;
+    color: #1b5e20;
+}
+
+
+/* ================= MAPA ================= */
+
+#map {
+    width: 100%;
+    height: 500px;
+    margin: 0 0 20px;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+#infoBox {
+    padding: 15px;
+    background-color: #c8e6c9;
+    border-radius: 12px;
+    margin: 10px 0 0;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+/* ================= QUIZ ================= */
+
+#quiz {
+    margin: 10px 0 20px;
+    line-height: 1.5;
+}
+
+#quiz > div {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f1f8e9;
+    border-radius: 12px;
+}
+
+#quiz label {
+    display: inline-block;
+    margin: 4px 0;
+    cursor: pointer;
+    color: #333;
+}
+
+#quiz input[type="radio"] {
+    margin-right: 7px;
+}
+
+#quizResult {
+    margin-top: 15px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+/* ================= CRÉDITOS ================= */
+
+.creditsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.creditCard {
+    background-color: #f1f8e9;
+    padding: 18px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.creditCard h3 {
+    color: #1b5e20;
+    margin-bottom: 8px;
+}
+
+.creditCard a {
+    color: #2e7d32;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.creditCard a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.leaflet-container {
+    z-index: 0;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 600px) {
+
+    main {
+        width: 94%;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttons button {
+        width: 100%;
+    }
+
+    .classificationButton {
+        font-size: 17px;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    .speciesGrid {
+        gap: 12px;
+    }
+}

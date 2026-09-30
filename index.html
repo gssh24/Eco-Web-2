@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto educativo sobre deforestación e incendios forestales.">
+    <title>Deforestación e Incendios Forestales</title>
+
+    <link rel="stylesheet" href="Amb.css">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIINfQ3M7y8Y8R6K7b6Y7n5f6Y7N5R5K5g="
+          crossorigin=""/>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Deforestación e Incendios Forestales</h1>
+    <p>Conoce sus causas, consecuencias y la importancia de proteger nuestros bosques.</p>
+</header>
+
+<main>
+
+    <div class="buttons">
+        <button onclick="mostrarSeccion('infoSection')">Información</button>
+        <button onclick="mostrarSeccion('mapSection')">Mapa de incendios</button>
+        <button onclick="mostrarSeccion('quizSection')">Test</button>
+        <button onclick="mostrarSeccion('creditsSection')">Créditos</button>
+    </div>
+
+    <!-- ================= INFORMACIÓN ================= -->
+    <section id="infoSection">
+
+        <h2>Información ambiental</h2>
+
+        <div class="clasificacion">
+
+            <button class="classificationButton"
+                    onclick="toggleClasificacion('deforestacion')">
+                🌳 Deforestación
+            </button>
+
+            <div id="deforestacion" class="classificationContent hidden">
+
+                <h3>¿Qué es la deforestación?</h3>
+
+                <p>
+                    La deforestación es la eliminación o pérdida de grandes
+                    extensiones de bosques y selvas, generalmente causada por
+                    actividades humanas como la agricultura, ganadería,
+                    explotación forestal y expansión urbana.
+                </p>
+
+                <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=500&q=80"
+                     alt="Bosque deforestado">
+
+                <h3>Principales causas</h3>
+
+                <ul>
+                    <li>Expansión de la agricultura.</li>
+                    <li>Ganadería.</li>
+                    <li>Tala de árboles.</li>
+                    <li>Construcción de caminos y ciudades.</li>
+                    <li>Incendios forestales.</li>
+                </ul>
+
+                <h3>Consecuencias</h3>
+
+                <p>
+                    La pérdida de bosques provoca reducción de la biodiversidad,
+                    erosión del suelo, alteración del ciclo del agua y aumento
+                    de las emisiones de dióxido de carbono.
+                </p>
+
+                <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=500&q=80"
+                     alt="Árboles de un bosque">
+
+            </div>
+        </div>
+
+
+        <div class="clasificacion">
+
+            <button class="classificationButton"
+                    onclick="toggleClasificacion('huellaCarbono')">
+                🌍 Huella de carbono
+            </button>
+
+            <div id="huellaCarbono" class="classificationContent hidden">
+
+                <h3>¿Qué es la huella de carbono?</h3>
+
+                <p>
+                    La huella de carbono representa la cantidad de gases de
+                    efecto invernadero que se generan como consecuencia de
+                    nuestras actividades.
+                </p>
+
+                <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=500&q=80"
+                     alt="Contaminación y emisiones">
+
+                <h3>¿Qué actividades generan huella de carbono?</h3>
+
+                <ul>
+                    <li>Uso de vehículos.</li>
+                    <li>Consumo de electricidad.</li>
+                    <li>Producción industrial.</li>
+                    <li>Quema de combustibles.</li>
+                    <li>Deforestación.</li>
+                </ul>
+
+                <h3>¿Cómo podemos reducirla?</h3>
+
+                <p>
+                    Podemos reducir nuestra huella utilizando transporte
+                    sostenible, ahorrando electricidad, evitando desperdicios,
+                    reciclando y protegiendo los bosques.
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="clasificacion">
+
+            <button class="classificationButton"
+                    onclick="toggleClasificacion('incendios')">
+                🔥 Incendios forestales
+            </button>
+
+            <div id="incendios" class="classificationContent hidden">
+
+                <h3>¿Qué es un incendio forestal?</h3>
+
+                <p>
+                    Un incendio forestal es un fuego que se propaga de manera
+                    descontrolada sobre zonas cubiertas por vegetación.
+                </p>
+
+                <img src="https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=500&q=80"
+                     alt="Incendio forestal">
+
+                <h3>Causas</h3>
+
+                <ul>
+                    <li>Quemas agrícolas.</li>
+                    <li>Fogatas mal apagadas.</li>
+                    <li>Colillas de cigarrillos.</li>
+                    <li>Quema de basura.</li>
+                    <li>Rayos y fenómenos naturales.</li>
+                </ul>
+
+                <h3>Consecuencias</h3>
+
+                <p>
+                    Los incendios destruyen hábitats, afectan a los animales,
+                    contaminan el aire y pueden liberar grandes cantidades de
+                    dióxido de carbono.
+                </p>
+
+                <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=500&q=80"
+                     alt="Bosque afectado">
+
+            </div>
+        </div>
+
+
+        <div class="clasificacion">
+
+            <button class="classificationButton"
+                    onclick="toggleClasificacion('biodiversidad')">
+                🦋 Biodiversidad
+            </button>
+
+            <div id="biodiversidad" class="classificationContent hidden">
+
+                <h3>¿Qué es la biodiversidad?</h3>
+
+                <p>
+                    La biodiversidad comprende la variedad de seres vivos,
+                    ecosistemas y especies que existen en nuestro planeta.
+                    Los bosques poseen una enorme diversidad de plantas,
+                    animales, hongos y microorganismos.
+                </p>
+
+                <img src="https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=500&q=80"
+                     alt="Biodiversidad">
+
+                <h3>Especies y ecosistemas</h3>
+
+                <p>
+                    La destrucción de los bosques puede provocar la pérdida
+                    de hábitats y poner en riesgo a numerosas especies.
+                </p>
+
+                <div class="speciesGrid">
+
+                    <div class="speciesCard">
+                        <img src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=500&q=80"
+                             alt="Jaguar">
+                        <h4>Jaguar</h4>
+                    </div>
+
+                    <div class="speciesCard">
+                        <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?auto=format&fit=crop&w=500&q=80"
+                             alt="Ave">
+                        <h4>Aves</h4>
+                    </div>
+
+                    <div class="speciesCard">
+                        <img src="https://images.unsplash.com/photo-1535338454770-8be927b5a00b?auto=format&fit=crop&w=500&q=80"
+                             alt="Mariposa">
+                        <h4>Mariposas</h4>
+                    </div>
+
+                    <div class="speciesCard">
+                        <img src="https://images.unsplash.com/photo-1456926631375-92c8ce872def?auto=format&fit=crop&w=500&q=80"
+                             alt="Mono">
+                        <h4>Monos</h4>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- ================= MAPA ================= -->
+    <section id="mapSection" class="hidden">
+
+        <h2>Mapa de incendios forestales</h2>
+
+        <div id="map"></div>
+
+        <div id="infoBox">
+            Selecciona un país en el mapa para consultar información.
+        </div>
+
+    </section>
+
+
+    <!-- ================= TEST ================= -->
+    <section id="quizSection" class="hidden">
+
+        <h2>Test de conocimientos</h2>
+
+        <div id="quiz"></div>
+
+        <button onclick="corregirQuiz()">Corregir respuestas</button>
+
+        <div id="quizResult"></div>
+
+    </section>
+
+
+    <!-- ================= CRÉDITOS ================= -->
+    <section id="creditsSection" class="hidden">
+
+        <h2>Créditos</h2>
+
+        <p>
+            Proyecto educativo desarrollado como parte de la investigación
+            sobre deforestación, incendios forestales y cambio climático.
+        </p>
+
+        <div class="creditsContainer">
+
+            <div class="creditCard">
+                <h3>Cuba Aquino, Gonzalo Raúl</h3>
+                <a href="https://www.instagram.com/gonzalocuba_/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    @gonzalocuba_
+                </a>
+            </div>
+
+            <div class="creditCard">
+                <h3>Kurilovich Lozowski, Ivan Adrian</h3>
+                <a href="https://www.instagram.com/ivankurilovich__/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    @ivankurilovich__
+                </a>
+            </div>
+
+            <div class="creditCard">
+                <h3>Sumi Haluszka, Goro Samuel</h3>
+                <a href="https://www.instagram.com/sumi_goro_s/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    @sumi_goro_s
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    <p>Proyecto educativo sobre medio ambiente</p>
+</footer>
+
+
+<script src="1st.js"></script>
+
+</body>
+</html>
