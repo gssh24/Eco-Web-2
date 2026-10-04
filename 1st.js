@@ -860,13 +860,13 @@ function mostrarInformacionPais(pais) {
     contenedor.innerHTML = `
 
         <h3 class="mapInfo-titulo">
-            🌎 ${pais}
+             ${pais}
         </h3>
 
 
         ${generarCategoria(
             idBase + "-deforestacion",
-            "🌳",
+            "",
             "Deforestación",
             info.deforestacion,
             info.imagenes.deforestacion
@@ -875,7 +875,7 @@ function mostrarInformacionPais(pais) {
 
         ${generarCategoria(
             idBase + "-incendios",
-            "🔥",
+            "",
             "Incendios forestales",
             info.incendios,
             info.imagenes.incendios
@@ -884,7 +884,7 @@ function mostrarInformacionPais(pais) {
 
         ${generarCategoria(
             idBase + "-carbono",
-            "🌍",
+            "",
             "Huella de carbono",
             info.carbono,
             info.imagenes.carbono
@@ -893,7 +893,7 @@ function mostrarInformacionPais(pais) {
 
         ${generarCategoria(
             idBase + "-biodiversidad",
-            "🦉",
+            "",
             "Biodiversidad",
             info.biodiversidad,
             info.imagenes.biodiversidad
@@ -902,7 +902,7 @@ function mostrarInformacionPais(pais) {
 
         ${generarCategoria(
             idBase + "-especies",
-            "🐾",
+            "",
             "Especies destacadas",
             "Entre las especies destacadas de esta región se encuentran: " +
             info.especies.join(", ") + ".",
@@ -961,13 +961,13 @@ function mostrarInformacionSitio(sitio) {
     contenedor.innerHTML = `
 
         <h3 class="mapInfo-titulo">
-            🌳 ${sitio.nombre}
+             ${sitio.nombre}
         </h3>
 
 
         ${generarCategoria(
             idBase + "-deforestacion",
-            "🌳",
+            "",
             "Deforestación",
             sitio.descripcion,
             infoParaguay.imagenes.deforestacion
@@ -976,7 +976,7 @@ function mostrarInformacionSitio(sitio) {
 
         ${generarCategoria(
             idBase + "-incendios",
-            "🔥",
+            "",
             "Incendios forestales",
             "Los incendios forestales representan una amenaza para las áreas naturales protegidas y pueden afectar la vegetación y la fauna.",
             infoParaguay.imagenes.incendios
@@ -985,7 +985,7 @@ function mostrarInformacionSitio(sitio) {
 
         ${generarCategoria(
             idBase + "-carbono",
-            "🌍",
+            "",
             "Huella de carbono",
             infoParaguay.carbono,
             infoParaguay.imagenes.carbono
@@ -994,7 +994,7 @@ function mostrarInformacionSitio(sitio) {
 
         ${generarCategoria(
             idBase + "-biodiversidad",
-            "🦉",
+            "",
             "Biodiversidad",
             sitio.importancia,
             infoParaguay.imagenes.biodiversidad
@@ -1003,7 +1003,7 @@ function mostrarInformacionSitio(sitio) {
 
         ${generarCategoria(
             idBase + "-especies",
-            "🐾",
+            "",
             "Especies destacadas",
             "Especie destacada: " + sitio.especie + ".",
             [
